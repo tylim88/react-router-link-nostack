@@ -20,6 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "history": "^4.10.1",
     "react-router-dom": "^5.0.1"
   },
   "peerDependencies": {
