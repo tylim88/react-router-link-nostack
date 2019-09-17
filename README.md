@@ -1,6 +1,6 @@
 # react-router-link-nostack
 
-This component is based on React Router's Link component, use this component to prevent stacking in browser history when revisiting the current route.
+This is a simple HOC that take in React Router's `Link` and `withRouter` to create new component that prevent stacking in browser history when revisiting the current route.
 
 ## Installation
 
@@ -8,15 +8,20 @@ This component is based on React Router's Link component, use this component to 
 npm i react-router-link-nostack
 ```
 
-## Import
+## Usage
 
 ```jsx
-import LinkNoStack from 'react-router-link-nostack'
+import createLinkNoStack from 'react-router-link-nostack'
+import { Link, withRouter } from 'react-router-dom'
+
+const LinkNoStack = CreateLinkNoStack(Link, withRouter)
+
+export default LinkNoStack
 
 ```
 
 ## API
 
-It works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
+The created `LinkNoStack` works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
 
-1. onSamePage: callback that trigger when user revisit the same page, can be undefined
+1. onSamePage: callback that trigger when user revisit the same page, can be undefined or null
