@@ -1,16 +1,22 @@
 # react-router-link-nostack
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+This component is based on React Router's Link component, use this component to prevent stacking in browser history when revisiting the current route.
 
-Describe react-router-link-nostack here.
+## Installation
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+```bash
+npm i react-router-link-nostack
+```
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+## Import
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+```jsx
+import LinkNoStack from 'react-router-link-nostack'
+
+```
+
+## API
+
+It works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
+
+1. onSamePage: callback that trigger when user revisit the same page, can be undefined
