@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
+import { Link, withRouter } from 'react-router-dom'
+const LinkNoStack = withRouter(props => {
+	const { match, history, location: pathname, to, otherProps } = props
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+	return <Link {...otherProps} />
+})
+
+export default LinkNoStack
