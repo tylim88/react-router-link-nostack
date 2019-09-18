@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useCallback} from 'react'
 
 const LinkNoStack = (Link, withRouter) =>
 	withRouter(props => {
-		const {staticContext,
+		const {
+			staticContext,
 			match,
 			history,
 			location: { pathname },
@@ -15,6 +16,8 @@ const LinkNoStack = (Link, withRouter) =>
 
 		let isSamePath = false
 
+		console.log('rerendered')
+
 		try {
 			isSamePath = pathname.toLowerCase() === to.toLowerCase()
 		} catch (e) {
@@ -22,16 +25,14 @@ const LinkNoStack = (Link, withRouter) =>
 		}
 
 		const to_ = isSamePath ? '#' : to
-		const onClick_ = e => {
-			if (isSamePath) {
-				e.preventDefault()
-				onSamePage && onSamePage()
-			}
+
+		const onClick_ = useCallback(e => {
+			isSamePath&&onSamePage && onSamePage()
 			onClick && onClick(e)
-		}
+		},[])
 
 		return (
-			<Link to={to_} onClick={onClick_} {...otherProps}>
+			<Link to={to_} onClick={onClick_} replace={isSamePath} {...otherProps}>
 				{children}
 			</Link>
 		)
