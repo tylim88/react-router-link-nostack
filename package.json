@@ -1,6 +1,6 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"description": "react-router-link-nostack React component",
 	"main": "lib/index.js",
 	"module": "es/index.js",
@@ -42,6 +42,9 @@
 		"url": "https://github.com/tylim88/react-router-link-nostack/issues"
 	},
 	"keywords": [
-		"react-component"
+		"react",
+		"component",
+		"router",
+		"link"
 	]
 }

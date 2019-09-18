@@ -2,7 +2,7 @@
 // import { render } from 'react-dom'
 // import { Router } from 'react-router-dom'
 // import { createBrowserHistory } from 'history'
-// import Example from '../../src'
+// import { LinkNoStackDOM } from '../../src'
 
 // const history = createBrowserHistory()
 // class Demo extends Component {
@@ -11,7 +11,7 @@
 // 			<Router history={history}>
 // 				<div>
 // 					<h1>react-router-link-nostack Demo</h1>
-// 					<Example to={{ a: 1 }}>test</Example>
+// 					<LinkNoStackDOM to={'/'}>test</LinkNoStackDOM>
 // 				</div>
 // 			</Router>
 // 		)

@@ -2,7 +2,7 @@ import React from 'react'
 
 const LinkNoStack = (Link, withRouter) =>
 	withRouter(props => {
-		const {
+		const {staticContext,
 			match,
 			history,
 			location: { pathname },
