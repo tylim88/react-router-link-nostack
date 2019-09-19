@@ -14,7 +14,7 @@ npm i react-router-link-nostack
 import createLinkNoStack from 'react-router-link-nostack'
 import { Link, withRouter } from 'react-router-dom'
 
-const LinkNoStack = CreateLinkNoStack(Link, withRouter)
+const LinkNoStack = createLinkNoStack(Link, withRouter)
 
 export default LinkNoStack
 
@@ -26,4 +26,4 @@ The created `LinkNoStack` works like and has the same properties as [React Route
 
 1. `onSamePage`: callback that trigger when user revisit the same page, can be undefined or null
 
-note:, no rerender when route to the same page, which is why you need this `onSamePage` props if you want to rerender.
+note: no rerender when route to the same page, which is why you need this `onSamePage` props if you want to rerender.
