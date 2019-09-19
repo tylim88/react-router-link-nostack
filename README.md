@@ -25,7 +25,3 @@ export default LinkNoStack
 The created `LinkNoStack` works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
 
 1. `onSamePage`: callback that trigger when user revisit the same page, can be undefined or null
-
-## Important
-
-In order for this component to work `<LinkNoStack/>` must be under `<Router/>` and `<Route/>` components

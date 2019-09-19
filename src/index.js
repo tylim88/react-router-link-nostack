@@ -1,29 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const createLinkNoStack = (Link, withRouter) =>
-	withRouter(props => {
-		const { staticContext, match, history, location, to, onClick, children, onSamePage, ...otherProps } = props
+const createLinkNoStack = (Link, withRouter) => {
+	return props => {
+		const [, forceUpdate] = useState([])
 
-		let isSamePath = false
+		const WithRouterLink = withRouter(props => {
+			const { staticContext, match, history, location, to, onClick, children, onSamePage, ...otherProps } = props
 
-		console.log('rerendered')
+			let isSamePath = false
 
-		try {
-			isSamePath = location.pathname.toLowerCase() === to.toLowerCase()
-		} catch (e) {
-			console.error('"to" props accept only strings(created by "react-router-link-nostack")')
-		}
+			try {
+				isSamePath = location.pathname.toLowerCase() === to.toLowerCase()
+			} catch (e) {
+				console.error('"to" props accept only strings(created by "react-router-link-nostack")')
+			}
+			const onClick_ = e => {
+				forceUpdate([])
+				isSamePath && onSamePage && onSamePage()
+				onClick && onClick(e)
+			}
 
-		const onClick_ = e => {
-			isSamePath && onSamePage && onSamePage()
-			onClick && onClick(e)
-		}
-
-		return (
-			<Link to={to} onClick={onClick_} replace={isSamePath} {...otherProps}>
-				{children}
-			</Link>
-		)
-	})
+			return (
+				<Link to={to} onClick={onClick_} replace={isSamePath} {...otherProps}>
+					{children}
+				</Link>
+			)
+		})
+		return <WithRouterLink {...props} />
+	}
+}
 
 export default createLinkNoStack
