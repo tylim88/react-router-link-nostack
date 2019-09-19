@@ -26,4 +26,6 @@ The created `LinkNoStack` works like and has the same properties as [React Route
 
 1. `onSamePage`: callback that trigger when user revisit the same page, can be undefined or null
 
-note: no rerender when route to the same page, which is why you need this `onSamePage` props if you want to rerender.
+## Important
+
+In order for this component to work `<LinkNoStack/>` must be under `<Router/>` and `<Route/>` components
