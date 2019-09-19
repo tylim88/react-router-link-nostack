@@ -2,37 +2,25 @@ import React from 'react'
 
 const createLinkNoStack = (Link, withRouter) =>
 	withRouter(props => {
-		const {
-			staticContext,
-			match,
-			history,
-			location: { pathname },
-			to,
-			onClick,
-			children,
-			onSamePage,
-			...otherProps
-		} = props
+		const { staticContext, match, history, location, to, onClick, children, onSamePage, ...otherProps } = props
 
 		let isSamePath = false
 
+		console.log('rerendered')
+
 		try {
-			isSamePath = pathname.toLowerCase() === to.toLowerCase()
+			isSamePath = location.pathname.toLowerCase() === to.toLowerCase()
 		} catch (e) {
 			console.error('"to" props accept only strings(created by "react-router-link-nostack")')
 		}
 
-		const to_ = isSamePath ? '#' : to
 		const onClick_ = e => {
-			if (isSamePath) {
-				e.preventDefault()
-				onSamePage && onSamePage()
-			}
+			isSamePath && onSamePage && onSamePage()
 			onClick && onClick(e)
 		}
 
 		return (
-			<Link to={to_} onClick={onClick_} {...otherProps}>
+			<Link to={to} onClick={onClick_} replace={isSamePath} {...otherProps}>
 				{children}
 			</Link>
 		)
