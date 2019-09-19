@@ -1,8 +1,9 @@
-import React,{useCallback} from 'react'
+import React, { useCallback } from 'react'
 
-const LinkNoStack = (Link, withRouter) =>
+const createLinkNoStack = (Link, withRouter) =>
 	withRouter(props => {
-		const {staticContext,
+		const {
+			staticContext,
 			match,
 			history,
 			location: { pathname },
@@ -10,7 +11,7 @@ const LinkNoStack = (Link, withRouter) =>
 			onClick,
 			children,
 			onSamePage,
-			...otherProps,
+			...otherProps
 		} = props
 
 		let isSamePath = false
@@ -22,13 +23,16 @@ const LinkNoStack = (Link, withRouter) =>
 		}
 
 		const to_ = isSamePath ? '#' : to
-		const onClick_ = useCallback(e => {
-			if (isSamePath) {
-				e.preventDefault()
-				onSamePage && onSamePage()
-			}
-			onClick && onClick(e)
-		},[])
+		const onClick_ = useCallback(
+			e => {
+				if (isSamePath) {
+					e.preventDefault()
+					onSamePage && onSamePage()
+				}
+				onClick && onClick(e)
+			},
+			[isSamePath, onSamePage, onClick]
+		)
 
 		return (
 			<Link to={to_} onClick={onClick_} {...otherProps}>
@@ -37,4 +41,4 @@ const LinkNoStack = (Link, withRouter) =>
 		)
 	})
 
-export default LinkNoStack
+export default createLinkNoStack
