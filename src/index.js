@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 
 const createLinkNoStack = (Link, withRouter) =>
 	withRouter(props => {
@@ -23,16 +23,13 @@ const createLinkNoStack = (Link, withRouter) =>
 		}
 
 		const to_ = isSamePath ? '#' : to
-		const onClick_ = useCallback(
-			e => {
-				if (isSamePath) {
-					e.preventDefault()
-					onSamePage && onSamePage()
-				}
-				onClick && onClick(e)
-			},
-			[isSamePath, onSamePage, onClick]
-		)
+		const onClick_ = e => {
+			if (isSamePath) {
+				e.preventDefault()
+				onSamePage && onSamePage()
+			}
+			onClick && onClick(e)
+		}
 
 		return (
 			<Link to={to_} onClick={onClick_} {...otherProps}>
