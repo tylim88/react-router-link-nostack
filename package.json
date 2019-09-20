@@ -1,6 +1,6 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.4.5",
+	"version": "0.4.6",
 	"description": "react-router-link-nostack React component",
 	"main": "lib/index.js",
 	"module": "es/index.js",
@@ -21,7 +21,6 @@
 		"deploy": "npm run build && gh-pages -d demo/dist"
 	},
 	"dependencies": {
-		"history": "^4.10.1",
 		"react-router-dom": "^5.0.1"
 	},
 	"peerDependencies": {
