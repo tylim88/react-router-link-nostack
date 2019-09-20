@@ -1,6 +1,6 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.4.2",
+	"version": "0.4.3",
 	"description": "react-router-link-nostack React component",
 	"main": "lib/index.js",
 	"module": "es/index.js",
@@ -36,7 +36,7 @@
 		"react-dom": "^16.9.0"
 	},
 	"author": "tylim",
-	"homepage": "https://tylim88.github.io/react-router-link-nostack",
+	"homepage": "",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
