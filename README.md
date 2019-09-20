@@ -2,8 +2,8 @@
 
 This is a simple HOC that take in React Router's `Link` and `withRouter` to create new component that prevent stacking in browser history when revisiting the current route.
 
-[Demo](https://tylim88.github.io/react-router-link-nostack)  
-[Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)
+Watch [Demo](https://tylim88.github.io/react-router-link-nostack)  
+Use [Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)
 
 ## Installation
 
