@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Router, Link, withRouter, Route, Switch } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
+import { BrowserRouter, Link, withRouter, Route, Switch } from 'react-router-dom'
 import createLinkNoStack from '../../src'
-
-const history = createBrowserHistory()
 
 const LinkNoStack = createLinkNoStack(Link, withRouter)
 
 class Demo extends Component {
 	render() {
 		return (
-			<Router history={history}>
+			<BrowserRouter basename={'/react-router-link-nostack'}>
 				<div>
 					<h1>react-router-link-nostack Demo</h1>
 					<LinkNoStack to='/'>to index</LinkNoStack>
@@ -35,7 +32,7 @@ class Demo extends Component {
 						}}
 					/>
 				</Switch>
-			</Router>
+			</BrowserRouter>
 		)
 	}
 }
