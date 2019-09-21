@@ -1,33 +1,40 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { BrowserRouter, Link, withRouter, Route, Switch } from 'react-router-dom'
+import createLinkNoStack from 'react-router-link-nostack'
 
-const createLinkNoStack = (Link, withRouter) => {
-	return props => {
-		const [, forceUpdate] = useState([])
+const LinkNoStack = createLinkNoStack(Link, withRouter)
 
-		const WithRouterLink = withRouter(props => {
-			const { staticContext, match, history, location, to, onClick, children, onSamePage, ...otherProps } = props
-
-			let isSamePath = false
-
-			try {
-				isSamePath = location.pathname.toLowerCase() === to.toLowerCase()
-			} catch (e) {
-				console.error('"to" props accept only strings(created by "react-router-link-nostack")')
-			}
-			const onClick_ = e => {
-				forceUpdate([])
-				isSamePath && onSamePage && onSamePage()
-				onClick && onClick(e)
-			}
-
-			return (
-				<Link to={to} onClick={onClick_} replace={isSamePath} {...otherProps}>
-					{children}
-				</Link>
-			)
-		})
-		return <WithRouterLink {...props} />
+class Demo extends Component {
+	render() {
+		return (
+			<BrowserRouter basename={'/react-router-link-nostack'}>
+				<div>
+					<h1>react-router-link-nostack Demo</h1>
+					<LinkNoStack to='/'>to index</LinkNoStack>
+					<br />
+					<LinkNoStack to='/123'>to 123</LinkNoStack>
+				</div>
+				<br />
+				<Switch>
+					<Route
+						exact
+						path='/'
+						render={() => {
+							return <p> Index{console.log('rerender index')}</p>
+						}}
+					/>
+					<Route
+						exact
+						path='/123'
+						render={() => {
+							return <p> 123{console.log('rerender 123')}</p>
+						}}
+					/>
+				</Switch>
+			</BrowserRouter>
+		)
 	}
 }
 
-export default createLinkNoStack
+render(<Demo />, document.querySelector('#root'))
