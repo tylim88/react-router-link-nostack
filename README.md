@@ -16,16 +16,16 @@ npm i react-router-link-nostack
 
 ```jsx
 import createLinkNoStack from 'react-router-link-nostack'
-import { Link, withRouter } from 'react-router-dom'
+import { Link as LinkRR, withRouter } from 'react-router-dom'
 
-const LinkNoStack = createLinkNoStack(Link, withRouter)
+const Link = createLinkNoStack(LinkRR, withRouter)
 
-export default LinkNoStack
+export default Link
 
 ```
 
 ## API
 
-The created `LinkNoStack` works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
+The created `Link` works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
 
 1. `onSamePage`: callback that trigger when user revisit the same page, can be undefined or null
