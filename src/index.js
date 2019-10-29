@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const createLinkNoStack = (Link, withRouter) => {
 	return withRouter(props => {
 		const { staticContext, match, history, location, to, onClick, onSamePage, ...otherProps } = props
+
+		const [, forceUpdate] = useState([])
 
 		let isSamePath = false
 		try {
@@ -11,6 +13,7 @@ const createLinkNoStack = (Link, withRouter) => {
 			console.error('"to" props accept only strings(created by "react-router-link-nostack")')
 		}
 		const onClick_ = e => {
+			forceUpdate([])
 			isSamePath && onSamePage && onSamePage()
 			onClick && onClick(e)
 		}
