@@ -1,49 +1,83 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.5.4",
-	"description": "react-router-link-nostack React component",
-	"main": "lib/index.js",
-	"module": "es/index.js",
-	"files": [
-		"css",
-		"es",
-		"lib",
-		"umd"
-	],
+	"version": "0.6.0",
+	"description": "react router link that wont stack history upon visiting same page",
+	"main": "index.js",
 	"scripts": {
-		"build": "nwb build-react-component",
-		"clean": "nwb clean-module && nwb clean-demo",
+		"test": "jest",
 		"prepublishOnly": "npm run build -- --no-demo",
-		"start": "nwb serve-react-demo",
-		"test": "nwb test-react",
-		"test:coverage": "nwb test-react --coverage",
-		"test:watch": "nwb test-react --server"
-	},
-	"dependencies": {},
-	"peerDependencies": {
-		"react": "16.x"
-	},
-	"devDependencies": {
-		"nwb": "0.23.x",
-		"prettier": "^1.18.2",
-		"prettier-quick": "0.0.5",
-		"react": "^16.9.0",
-		"react-dom": "^16.9.0"
-	},
-	"author": "tylim",
-	"homepage": "",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/tylim88/react-router-link-nostack"
-	},
-	"bugs": {
-		"url": "https://github.com/tylim88/react-router-link-nostack/issues"
+		"start": "webpack-dev-server --mode development --open",
+		"build": "webpack --mode production",
+		"lint": "eslint --cache --format codeframe --ext mjs,jsx,js src test"
 	},
 	"keywords": [
 		"react",
 		"component",
 		"router",
 		"link"
-	]
+	],
+	"author": "",
+	"license": "ISC",
+	"peerDependencies": {
+		"prop-types": "^15",
+		"react": "^16",
+		"react-dom": "^16",
+		"react-router-dom": "^5"
+	},
+	"devDependencies": {
+		"@neutrinojs/jest": "^9.1.0",
+		"@neutrinojs/react-components": "^9.1.0",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"husky": "^4.2.1",
+		"jest": "^25.1.0",
+		"neutrino": "^9.1.0",
+		"prettier": "^1.19.1",
+		"prettier-quick": "0.0.5",
+		"prop-types": "^15.7.2",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-router-dom": "^5.1.2",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.10.3"
+	},
+	"dependencies": {},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"prettier/react",
+			"eslint:recommended",
+			"plugin:prettier/recommended",
+			"prettier"
+		],
+		"rules": {
+			"no-unused-vars": [
+				"error",
+				{
+					"args": "after-used"
+				}
+			]
+		},
+		"settings": {
+			"import/resolver": {
+				"node": {
+					"moduleDirectory": [
+						"node_modules",
+						"src/"
+					]
+				}
+			}
+		}
+	},
+	"prettier": {
+		"eslintIntegration": true,
+		"singleQuote": true,
+		"jsxSingleQuote": true,
+		"trailingComma": "es5",
+		"semi": false,
+		"jsxBracketSameLine": false,
+		"useTabs": true
+	}
 }
