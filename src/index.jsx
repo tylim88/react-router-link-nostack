@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import LinkNoStack from './components/LinkNoStack'
+import Link from './components/Link'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 const Demo = () => {
@@ -8,9 +8,9 @@ const Demo = () => {
 		<BrowserRouter basename={'/react-router-link-nostack'}>
 			<div>
 				<h1>react-router-link-nostack Demo</h1>
-				<LinkNoStack to='/'>to index</LinkNoStack>
+				<Link to='/'>to index</Link>
 				<br />
-				<LinkNoStack to='/123'>to 123</LinkNoStack>
+				<Link to='/123'>to 123</Link>
 			</div>
 			<br />
 			<Switch>
