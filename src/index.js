@@ -10,7 +10,7 @@ const createLinkNoStack = (Link, withRouter) => {
 		try {
 			isSamePath = location.pathname.toLowerCase() === to.toLowerCase() || to === '#'
 		} catch (e) {
-			console.error('"to" props accept only strings(created by "react-router-link-nostack")')
+			console.error('(react-router-link-nostack) "to" props accept only strings')
 		}
 		const onClick_ = e => {
 			forceUpdate([])
