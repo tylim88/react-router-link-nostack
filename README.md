@@ -1,10 +1,6 @@
 # react-router-link-nostack
 
-This is a Link Component that prevent stacking in browser history upon re-navigating current route.
-
-Require react-router-dom in your project dependencies.
-
-The package itself has 0 dependencies.
+Custom [React Router](https://www.npmjs.com/package/react-router-dom) Link Component that prevent stacking in browser history upon re-navigating current route.
 
 ## Installation
 
