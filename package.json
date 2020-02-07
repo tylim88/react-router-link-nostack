@@ -1,8 +1,12 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.6.8",
+	"version": "0.6.9",
 	"description": "react router link that wont stack history upon visiting same page",
 	"main": "build/Link.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tylim88/react-router-link-nostack"
+	},
 	"scripts": {
 		"test": "jest",
 		"prepublishOnly": "npm run build -- --no-demo",
