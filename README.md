@@ -14,8 +14,6 @@ npm i react-router-link-nostack
 
 ## Demo
 
-Watch the **[Demo](https://huwcr.csb.app)**!  
-Or  
 Try it at **[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)**!  
 
 ## Usage
@@ -86,3 +84,7 @@ render(<Demo />, document.getElementById('root'))
 This `Link` works like and has the same properties as [React Router's Link](https://reacttraining.com/react-router/web/api/Link), plus:
 
 1. `onSamePage`: callback that trigger when user revisit the same page, can be undefined or null
+
+```jsx
+<Link to='/profile' onSamePage={()=>{console.log('same page and wont stack history!')}}>to profile</Link>
+```
