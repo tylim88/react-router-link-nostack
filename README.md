@@ -12,6 +12,12 @@ The package itself has 0 dependencies.
 npm i react-router-link-nostack
 ```
 
+## Demo
+
+Watch the **[Demo](https://huwcr.csb.app)**!  
+Or  
+Try it at **[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)**!  
+
 ## Usage
 
 simply use it just like you use React Router Link
@@ -74,10 +80,6 @@ const Demo = () => {
 render(<Demo />, document.getElementById('root'))
 
 ```
-
-Watch the **[Demo](https://huwcr.csb.app)**!  
-Or  
-Try it at **[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)**!  
 
 ## API
 
