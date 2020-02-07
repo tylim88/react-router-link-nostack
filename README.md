@@ -1,6 +1,10 @@
 # react-router-link-nostack
 
-This is a Link Component that take in React Router's `Link` and `withRouter` to create new component that prevent stacking in browser history when revisiting the current route.
+This is a Link Component that prevent stacking in browser history upon re-navigating current route.
+
+Require react-router-dom in your project dependencies.
+
+The package itself has 0 dependencies.
 
 ## Installation
 
@@ -17,15 +21,16 @@ import React from 'react'
 import { render } from 'react-dom'
 import Link from 'react-router-link-nostack'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const Demo = () => {
 	return (
-		<BrowserRouter basename={'/react-router-link-nostack'}>
+		<BrowserRouter basename={'/'}>
 			<div>
 				<h1>react-router-link-nostack Demo</h1>
 				<Link to='/'>to index</Link>
 				<br />
-				<Link to='/123'>to 123</Link>
+				<Link to='/profile'>to profile</Link>
 			</div>
 			<br />
 			<Switch>
@@ -33,17 +38,35 @@ const Demo = () => {
 					exact
 					path='/'
 					render={() => {
-						return <p> Index{console.log('rerender index')}</p>
+						return (
+							<>
+								<Helmet>
+									<title>Index</title>
+								</Helmet>
+								<p>Now at Index Page(route: '/')</p>
+							</>
+						)
 					}}
 				/>
 				<Route
 					exact
-					path='/123'
+					path='/profile'
 					render={() => {
-						return <p> 123{console.log('rerender 123')}</p>
+						return (
+							<>
+								<Helmet>
+									<title>Profile</title>
+								</Helmet>
+								<p>Now at Profile Page(route: '/profile')</p>
+							</>
+						)
 					}}
 				/>
 			</Switch>
+			<p>
+				try to click the same route multiple time and see it wont add to history
+				stack!
+			</p>
 		</BrowserRouter>
 	)
 }
@@ -52,9 +75,9 @@ render(<Demo />, document.getElementById('root'))
 
 ```
 
-Try [Demo](https://tylim88.github.io/react-router-link-nostack)  
+Watch the <<<[Demo](https://huwcr.csb.app/)>>> !
 Or  
-Use [Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)
+Try the <<<[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)>>> !
 
 ## API
 
