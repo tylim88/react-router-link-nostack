@@ -75,9 +75,9 @@ render(<Demo />, document.getElementById('root'))
 
 ```
 
-Watch the <<<[Demo](https://huwcr.csb.app/)>>> !
+Watch the **[Demo](https://huwcr.csb.app)**!  
 Or  
-Try the <<<[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)>>> !
+Try it at **[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)**!  
 
 ## API
 
