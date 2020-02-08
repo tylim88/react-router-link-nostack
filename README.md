@@ -2,6 +2,8 @@
 
 Custom [React Router](https://www.npmjs.com/package/react-router-dom) Link Component that prevent stacking in browser history upon re-navigating current route.
 
+Note: You need React Router `v5.1` or above to use this!
+
 ## Installation
 
 ```bash
