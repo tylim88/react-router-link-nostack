@@ -1,6 +1,6 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "0.6.17-beta.2",
+	"version": "0.6.17",
 	"description": "react router link that doesn't not stack history upon routing to the same page",
 	"main": "build/Link.js",
 	"files": [
