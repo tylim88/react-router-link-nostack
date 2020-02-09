@@ -1,5 +1,5 @@
 # Change Log
 
-## 0.6.17 9-2-20
+## 1.0.0
 
-- add test
+- release stable
