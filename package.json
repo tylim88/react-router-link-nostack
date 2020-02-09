@@ -12,10 +12,12 @@
 	},
 	"scripts": {
 		"test": "jest",
+		"test:watch": "jest --watch",
 		"prepublishOnly": "npm run build -- --no-demo",
 		"start": "webpack-dev-server --mode development --open",
 		"build": "webpack --mode production",
-		"lint": "eslint --cache --format codeframe --ext mjs,jsx,js src test"
+		"lint": "eslint --cache --format codeframe --ext mjs,jsx,js src test",
+		"lint:fix": "npm run lint --fix"
 	},
 	"keywords": [
 		"react",
@@ -30,11 +32,15 @@
 		"react-router-dom": "^5.1"
 	},
 	"devDependencies": {
-		"@neutrinojs/jest": "^9.1.0",
+		"@babel/preset-env": "^7.8.4",
+		"@babel/preset-react": "^7.8.3",
 		"@neutrinojs/react-components": "^9.1.0",
+		"@testing-library/jest-dom": "^5.1.1",
+		"@testing-library/react": "^9.4.0",
 		"@typescript-eslint/eslint-plugin": "^2.19.0",
 		"@typescript-eslint/parser": "^2.19.0",
 		"babel-eslint": "^10.0.3",
+		"babel-jest": "^25.1.0",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.10.0",
 		"eslint-config-react-app": "^5.2.0",
@@ -44,6 +50,7 @@
 		"eslint-plugin-prettier": "^3.1.2",
 		"eslint-plugin-react": "^7.18.3",
 		"eslint-plugin-react-hooks": "^1.7.0",
+		"history": "^4.10.1",
 		"husky": "^4.2.1",
 		"jest": "^25.1.0",
 		"neutrino": "^9.1.0",
@@ -53,6 +60,7 @@
 		"react-dom": "^16.12.0",
 		"react-helmet": "^5.2.1",
 		"react-router-dom": "^5.1.2",
+		"react-test-renderer": "^16.12.0",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10",
 		"webpack-dev-server": "^3.10.3"
@@ -93,5 +101,11 @@
 		"semi": false,
 		"jsxBracketSameLine": false,
 		"useTabs": true
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		]
 	}
 }
