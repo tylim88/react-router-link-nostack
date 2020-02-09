@@ -14,7 +14,7 @@ const LinkNoStack = props => {
 	}
 	const onClick_ = e => {
 		if (isSamePath) {
-			onSamePage && onSamePage()
+			onSamePage && onSamePage(e)
 		}
 		onClick && onClick(e)
 	}
