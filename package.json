@@ -12,6 +12,7 @@
 	},
 	"scripts": {
 		"test": "jest",
+		"coverage": "jest --coverage",
 		"test:watch": "jest --watch",
 		"prepublishOnly": "npm run build -- --no-demo",
 		"start": "webpack-dev-server --mode development --open",
