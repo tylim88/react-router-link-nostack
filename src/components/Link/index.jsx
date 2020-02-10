@@ -1,27 +1,38 @@
-import React from 'react'
+import React, { useCallback, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const LinkNoStack = props => {
+const checkToProps = (to = '', pathname = '') => {
+	try {
+		return pathname.toLowerCase() === to.toLowerCase() || to === '#'
+	} catch (e) {
+		console.error('(react-router-link-nostack) "to" props accept only strings')
+		return null
+	}
+}
+
+const runOnSamePage = (e, isSamePath, onSamePage) => {
+	if (isSamePath) {
+		onSamePage && onSamePage(e)
+	}
+}
+
+const LinkNoStack = memo(props => {
 	const { to, onClick, onSamePage, ...otherProps } = props
 	const location = useLocation()
 
-	let isSamePath = false
-	try {
-		isSamePath =
-			location.pathname.toLowerCase() === to.toLowerCase() || to === '#'
-	} catch (e) {
-		console.error('(react-router-link-nostack) "to" props accept only strings')
-	}
-	const onClick_ = e => {
-		if (isSamePath) {
-			onSamePage && onSamePage(e)
-		}
-		onClick && onClick(e)
-	}
+	const isSamePath = checkToProps(to, location.pathname)
+
+	const onClick_ = useCallback(
+		e => {
+			runOnSamePage(e, isSamePath, onSamePage)
+			onClick && onClick(e)
+		},
+		[isSamePath, onClick, onSamePage]
+	)
 
 	return (
 		<Link to={to} onClick={onClick_} replace={isSamePath} {...otherProps} />
 	)
-}
+})
 
-export default LinkNoStack
+export { LinkNoStack as default, checkToProps, runOnSamePage }

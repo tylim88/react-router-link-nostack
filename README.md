@@ -1,8 +1,8 @@
 # react-router-link-nostack
 
-[![tylim88](https://circleci.com/gh/tylim88/react-router-link-nostack.svg?style=svg)](<[LINK](https://github.com/tylim88/react-router-link-nostack#react-router-link-nostack)>)  ![GitHub](https://img.shields.io/github/license/tylim88/react-router-link-nostack) ![npm](https://img.shields.io/npm/v/react-router-link-nostack)
+![npm](https://img.shields.io/npm/v/react-router-link-nostack)  ![GitHub](https://img.shields.io/github/license/tylim88/react-router-link-nostack) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  [![tylim88](https://circleci.com/gh/tylim88/react-router-link-nostack.svg?style=svg)](<[LINK](https://github.com/tylim88/react-router-link-nostack#react-router-link-nostack)>)
 
-Custom [React Router](https://www.npmjs.com/package/react-router-dom) Link Component that prevent stacking in browser history upon re-navigating current route.
+Custom [React Router](https://www.npmjs.com/package/react-router-dom) Link Component(out of the box memoization!) that prevent stacking in browser history upon re-navigating current route.
 
 Note: You need React Router `v5.1` or above to use this!
 
