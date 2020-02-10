@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.4 10-2-2020
+
+- update readme
+
 ## 1.0.2: 10-2-2020
 
 - add PR welcome badge

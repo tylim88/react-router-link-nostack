@@ -1,7 +1,7 @@
 {
 	"name": "react-router-link-nostack",
 	"version": "1.0.4",
-	"description": "react router link that doesn't not stack history upon routing to the same page",
+	"description": "🎈 <Link/> that prevent stacking in browser history upon re-navigating current route",
 	"main": "build/Link.js",
 	"files": [
 		"build/Link.js"
