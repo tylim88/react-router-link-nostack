@@ -4,11 +4,10 @@
 
 🎈 Prevent stacking in browser history upon re-navigating current route with custom [React Router](https://www.npmjs.com/package/react-router-dom) Link Component.
 
-- 0 learning curve
+- minimal api 0 learning curve
 - out of the box memoization
-- small footprint
-- 0 dependency
-- tested
+- 0 dependency small footprint
+- tested and production ready
 
 Note: You need React Router `v5.1` or above to use this!
 
