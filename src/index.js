@@ -1,40 +1,55 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter, Link, withRouter, Route, Switch } from 'react-router-dom'
-import createLinkNoStack from 'react-router-link-nostack'
+import Link from 'react-router-link-nostack'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
-const LinkNoStack = createLinkNoStack(Link, withRouter)
-
-class Demo extends Component {
-	render() {
-		return (
-			<BrowserRouter basename={'/react-router-link-nostack'}>
-				<div>
-					<h1>react-router-link-nostack Demo</h1>
-					<LinkNoStack to='/'>to index</LinkNoStack>
-					<br />
-					<LinkNoStack to='/123'>to 123</LinkNoStack>
-				</div>
+const Demo = () => {
+	return (
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
+			<div>
+				<h1>react-router-link-nostack Demo</h1>
+				<Link to='/'>to index</Link>
 				<br />
-				<Switch>
-					<Route
-						exact
-						path='/'
-						render={() => {
-							return <p> Index{console.log('rerender index')}</p>
-						}}
-					/>
-					<Route
-						exact
-						path='/123'
-						render={() => {
-							return <p> 123{console.log('rerender 123')}</p>
-						}}
-					/>
-				</Switch>
-			</BrowserRouter>
-		)
-	}
+				<Link to='/profile'>to profile</Link>
+			</div>
+			<br />
+			<Switch>
+				<Route
+					exact
+					path='/'
+					render={() => {
+						return (
+							<>
+								<Helmet>
+									<title>Index</title>
+								</Helmet>
+								<p>Now at Index Page(route: '/')</p>
+							</>
+						)
+					}}
+				/>
+				<Route
+					exact
+					path='/profile'
+					render={() => {
+						return (
+							<>
+								<Helmet>
+									<title>Profile</title>
+								</Helmet>
+								<p>Now at Profile Page(route: '/profile')</p>
+							</>
+						)
+					}}
+				/>
+			</Switch>
+			<p>
+				try to click the same route multiple time and see it wont add to history
+				stack!
+			</p>
+		</BrowserRouter>
+	)
 }
 
-render(<Demo />, document.querySelector('#root'))
+render(<Demo />, document.getElementById('root'))
