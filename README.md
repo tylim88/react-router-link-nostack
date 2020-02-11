@@ -20,6 +20,8 @@ npm i react-router-link-nostack
 
 ## Demo
 
+View it at **[GhPage](https://tylim88.github.io/react-router-link-nostack/)**!
+
 Try it at **[Code Sandbox](https://codesandbox.io/s/interesting-ganguly-huwcr)**!  
 
 ## Usage

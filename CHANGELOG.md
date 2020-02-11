@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.6 12-2-2020
+
+- add new demo page
+
 ## 1.0.5 10-2-2020
 
 - update readme
