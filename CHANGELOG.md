@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.7 29-July-2020
+
+- add typescript support
+
 ## 1.0.6 12-2-2020
 
 - add new demo page
@@ -12,7 +16,7 @@
 
 - add PR welcome badge
 - refactor and add more tests
-- implement useCallback to onClick_
+- implement useCallback to onClick
 - implement memoization
 
 ## 1.0.1

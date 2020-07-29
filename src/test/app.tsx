@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Route, Switch } from 'react-router-dom'
-import Link from '../src/components/Link'
+import Link from '../'
 
 const About = () => <h1>You are on the about page</h1>
 const Home = () => <h1>You are home</h1>

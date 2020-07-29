@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../src/components/Link/index'
+import Link from '../'
 import { MemoryRouter, Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { create } from 'react-test-renderer'
