@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.0.12 29-July-2020
+
+- fix types not found bug
+
+## 1.0.10 29-July-2020
+
+- fix module not found bug
+
 ## 1.0.8 29-July-2020
 
 - improve typing on the component (or else it only accept 3 props)

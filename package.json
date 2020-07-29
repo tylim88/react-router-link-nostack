@@ -1,8 +1,9 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "1.0.8",
+	"version": "1.0.12",
 	"description": "🎈 <Link/> that prevent stacking in browser history upon re-navigating current route",
-	"main": "dist/Link.js",
+	"main": "dist/index.js",
+	"types": "types/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/tylim88/react-router-link-nostack"
@@ -32,6 +33,7 @@
 		"@babel/cli": "^7.4.3",
 		"@babel/core": "^7.4.3",
 		"@babel/node": "^7.2.2",
+		"@babel/plugin-transform-react-jsx": "^7.10.4",
 		"@babel/preset-env": "^7.8.4",
 		"@babel/preset-react": "^7.8.3",
 		"@babel/preset-typescript": "^7.10.4",
@@ -99,6 +101,7 @@
 			"@babel/preset-typescript"
 		],
 		"plugins": [
+			"@babel/plugin-transform-react-jsx",
 			[
 				"babel-plugin-root-import",
 				{
