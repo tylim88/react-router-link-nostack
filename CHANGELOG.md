@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.8 29-July-2020
+
+- improve typing on the component (or else it only accept 3 props)
+
 ## 1.0.7 29-July-2020
 
 - add typescript support

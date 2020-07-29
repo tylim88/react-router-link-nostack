@@ -22,9 +22,7 @@ const runOnSamePage = (
 	}
 }
 
-const LinkNoStack: React.FC<{
-	to: React.ComponentProps<typeof Link>['to']
-	onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
+const LinkNoStack: React.FC<React.ComponentProps<typeof Link> & {
 	onSamePage?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
 }> = props => {
 	const { to, onClick, onSamePage, ...otherProps } = props

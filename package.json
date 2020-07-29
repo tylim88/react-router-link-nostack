@@ -1,6 +1,6 @@
 {
 	"name": "react-router-link-nostack",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "🎈 <Link/> that prevent stacking in browser history upon re-navigating current route",
 	"main": "dist/Link.js",
 	"repository": {
@@ -157,5 +157,11 @@
 				}
 			}
 		]
-	}
+	},
+	"eslintIgnore": [
+		"types/*",
+		"dist/*",
+		".config/*",
+		"node_modules"
+	]
 }
